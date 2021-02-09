@@ -26,7 +26,7 @@ After installing, run this in a command line:
 $ qiskit-now
 ```
 
-## Using docker directly
+## Using Docker directly
 
 You can also run the following command in macOS or Linux:
 
