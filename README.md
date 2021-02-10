@@ -31,17 +31,17 @@ $ qiskit-now
 You can also run the following command in macOS or Linux:
 
 ```sh
-$ docker run -it \
-    --user "$(id -u):$(id -g)" \
-    --name="qiskit-now" \
-    --env="HOME=/home" \
-    --volume="/etc/group:/etc/group:ro" \
-    --volume="/etc/passwd:/etc/passwd:ro" \
-    --volume="/etc/shadow:/etc/shadow:ro" \
-    --volume="$HOME:/home" \
-    --publish="8888:8888/tcp" \
-    --workdir="$PWD" \
-    delapuente/qiskitnow:latest
+docker run -it \
+--user "$(id -u):$(id -g)" \
+--name="qiskit-now" \
+--env="HOME=/home" \
+--volume="/etc/group:/etc/group:ro" \
+--volume="/etc/passwd:/etc/passwd:ro" \
+--volume="/etc/shadow:/etc/shadow:ro" \
+--volume="$HOME:/home" \
+--publish="8888:8888/tcp" \
+--workdir="$PWD" \
+delapuente/qiskitnow:latest
 ```
 
 And this other one in a [Windows Power Shell](https://docs.microsoft.com/en-us/powershell/scripting/windows-powershell/starting-windows-powershell?view=powershell-7.1):
