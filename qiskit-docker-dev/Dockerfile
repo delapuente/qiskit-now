@@ -10,4 +10,4 @@ RUN pip install jupyterlab
 
 EXPOSE 8888
 
-CMD [ "jupyter", "lab", "--port=8888", "--ip=0.0.0.0", "--NotebookApp.open_browser=False" ]
+CMD [ "jupyter", "lab", "--port=8888", "--ip=0.0.0.0", "--allow-root", "--no-browser" ]

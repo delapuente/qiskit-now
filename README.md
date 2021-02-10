@@ -34,28 +34,30 @@ You can also run the following command in macOS or Linux:
 $ docker run -it \
     --user "$(id -u):$(id -g)" \
     --name="qiskit-now" \
-    --env="HOME=$HOME" \
+    --env="HOME=/home" \
     --volume="/etc/group:/etc/group:ro" \
     --volume="/etc/passwd:/etc/passwd:ro" \
     --volume="/etc/shadow:/etc/shadow:ro" \
-    --volume="$HOME:$HOME" \
+    --volume="$HOME:/home" \
     --publish="8888:8888/tcp" \
     --workdir="$PWD" \
     delapuente/qiskitnow:latest
 ```
 
-And this other one in Windows:
+And this other one in a [Windows Power Shell](https://docs.microsoft.com/en-us/powershell/scripting/windows-powershell/starting-windows-powershell?view=powershell-7.1):
 
 ```sh
-$ docker run -it \
-    --user "$(id -u):$(id -g)" \
-    --name="qiskit-now" \
-    --env="HOME=$HOME" \
-    --volume="/etc/group:/etc/group:ro" \
-    --volume="/etc/passwd:/etc/passwd:ro" \
-    --volume="/etc/shadow:/etc/shadow:ro" \
-    --volume="$HOME:$HOME" \
-    --publish="8888:8888/tcp" \
-    --workdir="$PWD" \
-    delapuente/qiskitnow:latest
+docker run -ti `
+--name="qiskitnow" `
+--volume="${HOME}:/home" `
+--env="HOME=/home" `
+--publish="8888:8888/tcp" `
+--workdir="/home" `
+delapuente/qiskitnow:latest
+```
+
+Or in just one line, in the traditional Command Prompt also in Windows:
+
+```sh
+docker run -ti --name="qiskitnow" --volume="${HOME}:/home" --env="HOME=/home" --publish="8888:8888/tcp" --workdir="/home" delapuente/qiskitnow:latest
 ```
