@@ -40,7 +40,7 @@ docker run -it \
 --volume="/etc/shadow:/etc/shadow:ro" \
 --volume="$HOME:/home" \
 --publish="8888:8888/tcp" \
---workdir="$PWD" \
+--workdir="/home" \
 delapuente/qiskitnow:latest
 ```
 
